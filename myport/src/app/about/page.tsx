@@ -295,7 +295,7 @@ function Page() {
               When I&apos;m not coding, you can find me exploring new AI research papers, 
               working on ML projects, or learning about the latest advancements in machine learning and automation.
             </p>
-            <h1 className="text-3xl mb-10 lg:md-20">Stuff I use</h1>
+            <h2 className="text-3xl mb-10 lg:md-20">Stuff I use</h2>
             <div className="mb-5">
               {!toolsLoaded ? (
                 <p className="h-[100px]"></p>
