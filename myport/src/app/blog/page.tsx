@@ -48,9 +48,9 @@ function BlogPage() {
               className="flex justify-center items-center h-64"
             >
               <div className="text-center">
-                <h2 className="text-2xl font-semibold text-zinc-700 dark:text-zinc-300 mb-2">
+                <h3 className="text-2xl font-semibold text-zinc-700 dark:text-zinc-300 mb-2">
                   No blog posts yet!
-                </h2>
+                </h3>
                 <p className="text-zinc-500 dark:text-zinc-400">
                   Check back soon for new content.
                 </p>
