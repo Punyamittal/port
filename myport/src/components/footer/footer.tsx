@@ -64,7 +64,7 @@ function Footer() {
             <Sparkles className="w-4 h-4 text-yellow-400" />
           </motion.div>
           
-          <span className="text-sm font-mono text-gray-600 dark:text-gray-300">
+          <span className="text-sm font-mono text-black-600 dark:text-black-300">
             Crafted with
           </span>
           
@@ -76,7 +76,7 @@ function Footer() {
             <Heart className="w-4 h-4 text-red-500 fill-current" />
           </motion.div>
           
-          <span className="text-sm font-mono text-gray-600 dark:text-gray-300">
+          <span className="text-sm font-mono text-black-600 dark:text-black-300">
             by
           </span>
           
@@ -109,7 +109,7 @@ function Footer() {
       {/* Existing Footer Content */}
       <div className="flex w-full flex-col items-center gap-4 sm:flex-row sm:justify-between">
         <motion.p
-          className="text-xs text-gray-500 dark:text-gray-400"
+          className="text-xs text-black-500 dark:text-black-400"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}

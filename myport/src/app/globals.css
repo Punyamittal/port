@@ -6,6 +6,10 @@ body {
   scroll-behavior: smooth;
 }
 
+body.light {
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

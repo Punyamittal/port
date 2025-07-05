@@ -15,9 +15,12 @@ import { SiGithub, SiLinkedin } from "react-icons/si";
 import { config } from "@/data/config";
 import { TypewriterEffect, TypewriterEffectSmooth } from "../ui/typewriter-effect";
 import { RealisticTypewriter } from "../ui/realistic-typewriter";
+import { useTheme } from "next-themes";
 
 const HeroSection = () => {
   const { isLoading } = usePreloader();
+  const { theme } = useTheme();
+  const isLight = theme === "light";
 
   return (
     <section id="hero" className={cn("relative w-full h-screen")}>
@@ -36,8 +39,9 @@ const HeroSection = () => {
                 <BlurIn delay={0.7}>
                   <p
                     className={cn(
-                      "md:self-start mt-4 font-thin text-lg text-white ml-3",
-                      "cursor-default font-display sm:text-2xl md:text-2xl whitespace-nowrap bg-clip-text "
+                      "md:self-start mt-4 font-thin text-lg ml-3",
+                      "cursor-default font-display sm:text-2xl md:text-2xl whitespace-nowrap bg-clip-text",
+                      isLight ? "text-black" : "text-white"
                     )}
                   >
                     Hi, I am
@@ -74,8 +78,9 @@ const HeroSection = () => {
                 <BlurIn delay={1.2}>
                   <p
                     className={cn(
-                      "md:self-start md:mt-4 font-thin text-lg text-white ml-3",
-                      "cursor-default font-display sm:text-2xl md:text-2xl bg-clip-text text-center md:text-left"
+                      "md:self-start md:mt-4 font-thin text-lg ml-3",
+                      "cursor-default font-display sm:text-2xl md:text-2xl bg-clip-text text-center md:text-left",
+                      isLight ? "text-black" : "text-white"
                     )}
                   >
                     AI Engineer
@@ -84,8 +89,9 @@ const HeroSection = () => {
                 <BlurIn delay={1.4}>
                   <p
                     className={cn(
-                      "md:self-start md:mt-2 font-thin text-md text-white ml-3",
-                      "cursor-default font-display sm:text-xl md:text-xl bg-clip-text text-center md:text-left"
+                      "md:self-start md:mt-2 font-thin text-md ml-3",
+                      "cursor-default font-display sm:text-xl md:text-xl bg-clip-text text-center md:text-left",
+                      isLight ? "text-black" : "text-white"
                     )}
                   >
                     CSE (AI & ML) At VIT Chennai

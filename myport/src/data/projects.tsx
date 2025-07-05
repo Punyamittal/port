@@ -1023,7 +1023,7 @@ const projects: Project[] = [
             architecture and scalable design patterns.
           </p>
 
-          <TypographyP className="font-mono text-center mt-6 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+          <TypographyP className="font-mono text-center mt-6 p-4 bg-black-100 dark:bg-black-800 rounded-lg">
             💻 Crafted with passion and precision by <strong>Punya Mittal</strong> 🚀
           </TypographyP>
 

@@ -343,20 +343,30 @@ const AnimatedBackground = () => {
     });
   };
   const handleSplineInteractions = () => {
-    if (!splineApp) return;
+    if (!splineApp) {
+      console.log("Spline app not loaded yet");
+      return;
+    }
+    console.log("Setting up Spline interactions");
+    
     splineApp.addEventListener("keyUp", (e) => {
+      console.log("Key up event:", e.target.name);
       if (!splineApp) return;
       splineApp.setVariable("heading", "");
       splineApp.setVariable("desc", "");
     });
     splineApp.addEventListener("keyDown", (e) => {
+      console.log("Key down event:", e.target.name);
       if (!splineApp) return;
       const skill = SKILLS[e.target.name as SkillNames];
       if (skill) setSelectedSkill(skill);
       splineApp.setVariable("heading", skill.label);
       splineApp.setVariable("desc", skill.shortDescription);
     });
-    splineApp.addEventListener("mouseHover", handleMouseHover);
+    splineApp.addEventListener("mouseHover", (e) => {
+      console.log("Mouse hover event:", e.target.name);
+      handleMouseHover(e);
+    });
   };
   const handleGsapAnimations = () => {
     if (!splineApp) return;

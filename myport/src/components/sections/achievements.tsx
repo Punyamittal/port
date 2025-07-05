@@ -87,26 +87,49 @@ const AchievementsSection = () => {
               className="group"
             >
               <BoxReveal delay={0.6 + index * 0.1} width="100%">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                <div className={cn(
+                  "backdrop-blur-md rounded-xl p-6 transition-all duration-300 border shadow-lg",
+                  "bg-white/60 border-zinc-200 text-zinc-800",
+                  "dark:bg-white/5 dark:border-white/10 dark:text-white",
+                  "hover:bg-white/80 dark:hover:bg-white/10"
+                )}>
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                      <div className={cn(
+                        "w-12 h-12 rounded-lg flex items-center justify-center",
+                        "bg-gradient-to-br from-blue-400 to-pink-300",
+                        "dark:from-blue-500 dark:to-purple-600"
+                      )}>
                         <achievement.icon className="w-6 h-6 text-white" />
                       </div>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-xl font-semibold text-white">
+                        <h3 className={cn(
+                          "text-xl font-semibold",
+                          "text-zinc-800 dark:text-white"
+                        )}>
                           {achievement.title}
                         </h3>
-                        <span className="text-sm text-zinc-400 bg-zinc-800 px-2 py-1 rounded-full">
+                        <span className={cn(
+                          "text-sm px-2 py-1 rounded-full",
+                          "text-zinc-500 bg-zinc-100",
+                          "dark:text-zinc-400 dark:bg-zinc-800"
+                        )}>
                           {achievement.year}
                         </span>
                       </div>
-                      <p className="text-zinc-300 mb-3">
+                      <p className={cn(
+                        "mb-3",
+                        "text-zinc-700 dark:text-zinc-300"
+                      )}>
                         {achievement.description}
                       </p>
-                      <span className="inline-block text-xs text-blue-400 bg-blue-400/10 px-3 py-1 rounded-full">
+                      <span className={cn(
+                        "inline-block text-xs px-3 py-1 rounded-full",
+                        "text-blue-600 bg-blue-100",
+                        "dark:text-blue-400 dark:bg-blue-400/10"
+                      )}>
                         {achievement.category}
                       </span>
                     </div>

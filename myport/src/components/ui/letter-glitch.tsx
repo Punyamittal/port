@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 
 const LetterGlitch = ({
   glitchColors = ['#2b4539', '#61dca3', '#61b3dc'],
@@ -17,6 +18,8 @@ const LetterGlitch = ({
   const context = useRef(null);
   const lastGlitchTime = useRef(Date.now());
   const [isClient, setIsClient] = useState(false);
+  const { theme } = useTheme();
+  const isLight = theme === "light";
 
   const fontSize = 16;
   const charWidth = 10;
@@ -214,7 +217,7 @@ const LetterGlitch = ({
     position: 'relative',
     width: '100%',
     height: '100%',
-    backgroundColor: '#000000',
+    backgroundColor: isLight ? '#ffffff' : '#000000', // Changed from '#000000' to white
     overflow: 'hidden',
   };
 
