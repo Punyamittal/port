@@ -117,7 +117,7 @@ function Page() {
                 </Splide>
               </div>
               <div className="p-4 text-zinc-300">
-                <h2 className="text-xl">{project.name}</h2>
+                <h3 className="text-xl">{project.name}</h3>
                 <p className="mt-2 text-xs text-zinc-500">
                   {project.description}
                 </p>

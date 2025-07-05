@@ -95,12 +95,18 @@ const ExperienceSection = () => {
           className="text-center mb-16"
         >
           <BlurIn delay={0.2}>
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
+            <h2 className={cn(
+              "text-4xl md:text-6xl font-bold mb-4",
+              "text-zinc-800 dark:text-white"
+            )}>
               Experience
             </h2>
           </BlurIn>
           <BlurIn delay={0.4}>
-            <p className="text-lg text-zinc-300 max-w-2xl mx-auto">
+            <p className={cn(
+              "text-lg max-w-2xl mx-auto",
+              "text-zinc-600 dark:text-zinc-300"
+            )}>
               My professional journey from internships to leadership roles
             </p>
           </BlurIn>
@@ -124,35 +130,55 @@ const ExperienceSection = () => {
                   index % 2 === 0 ? "md:pr-8" : "md:pl-8 md:flex-row-reverse"
                 )}>
                   {/* Timeline dot */}
-                  <div className="absolute left-4 md:left-1/2 top-6 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full border-4 border-black transform -translate-x-1/2 z-10" />
+                  <div className="absolute left-4 md:left-1/2 top-6 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full border-4 border-white dark:border-black transform -translate-x-1/2 z-10 shadow-lg" />
                   
                   {/* Content card */}
                   <div className={cn(
-                    "bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300",
+                    "backdrop-blur-md rounded-xl p-6 transition-all duration-300 border shadow-lg",
+                    "bg-white/60 border-zinc-200 text-zinc-800",
+                    "dark:bg-white/5 dark:border-white/10 dark:text-white",
+                    "hover:bg-white/80 dark:hover:bg-white/10",
                     index % 2 === 0 ? "md:mr-8" : "md:ml-8"
                   )}>
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
+                        <div className={cn(
+                          "w-12 h-12 rounded-lg flex items-center justify-center",
+                          "bg-gradient-to-br from-green-400 to-blue-500",
+                          "dark:from-green-500 dark:to-blue-600"
+                        )}>
                           <experience.icon className="w-6 h-6 text-white" />
                         </div>
                       </div>
                       <div className="flex-1">
                         <div className="flex items-start justify-between mb-3">
                           <div>
-                            <h3 className="text-xl font-semibold text-white mb-1">
+                            <h3 className={cn(
+                              "text-xl font-semibold mb-1",
+                              "text-zinc-800 dark:text-white"
+                            )}>
                               {experience.title}
                             </h3>
-                            <p className="text-lg text-blue-400 font-medium">
+                            <p className={cn(
+                              "text-lg font-medium",
+                              "text-blue-600 dark:text-blue-400"
+                            )}>
                               {experience.company}
                             </p>
                           </div>
-                          <span className="text-sm text-zinc-400 bg-zinc-800 px-3 py-1 rounded-full">
+                          <span className={cn(
+                            "text-sm px-3 py-1 rounded-full",
+                            "text-zinc-600 bg-zinc-100",
+                            "dark:text-zinc-400 dark:bg-zinc-800"
+                          )}>
                             {experience.type}
                           </span>
                         </div>
                         
-                        <div className="flex items-center gap-4 mb-3 text-sm text-zinc-400">
+                        <div className={cn(
+                          "flex items-center gap-4 mb-3 text-sm",
+                          "text-zinc-600 dark:text-zinc-400"
+                        )}>
                           <div className="flex items-center gap-1">
                             <Calendar className="w-4 h-4" />
                             <span>{experience.duration}</span>
@@ -163,7 +189,10 @@ const ExperienceSection = () => {
                           </div>
                         </div>
                         
-                        <p className="text-zinc-300 mb-4 leading-relaxed">
+                        <p className={cn(
+                          "mb-4 leading-relaxed",
+                          "text-zinc-700 dark:text-zinc-300"
+                        )}>
                           {experience.description}
                         </p>
                         
@@ -171,7 +200,11 @@ const ExperienceSection = () => {
                           {experience.technologies.map((tech, techIndex) => (
                             <span
                               key={techIndex}
-                              className="text-xs text-green-400 bg-green-400/10 px-2 py-1 rounded-full"
+                              className={cn(
+                                "text-xs px-2 py-1 rounded-full",
+                                "text-green-600 bg-green-100",
+                                "dark:text-green-400 dark:bg-green-400/10"
+                              )}
                             >
                               {tech}
                             </span>

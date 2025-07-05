@@ -42,10 +42,8 @@ function MainPage() {
               smooth={true}
             />
           </div>
-          <div className="top-0 z-1 fixed w-full h-screen pointer-events-none">
-            <div className="pointer-events-auto">
-              <AnimatedBackground />
-            </div>
+          <div className="top-0 z-15 fixed w-full h-screen">
+            <AnimatedBackground />
           </div>
           <div className="relative z-10">
             <HeroSection />

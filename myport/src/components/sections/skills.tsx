@@ -23,22 +23,12 @@ const SkillsSection = () => {
         </Link>
       </div>
       
-      {/* Middle section for keyboard interaction - make it visible */}
-      <div className="flex-1 flex items-center justify-center min-h-[50vh]">
-        <div className="text-center">
-          <p className="text-lg text-gray-600 dark:text-gray-400">
-            Hover over the keyboard keys to see skill details
-          </p>
-        </div>
+      {/* Middle section for keyboard interaction */}
+      <div className="flex-1 flex items-center justify-center min-h-[60vh]">
       </div>
       
       {/* Bottom section to ensure proper scroll trigger */}
       <div className="absolute bottom-0 left-0 right-0 h-96 flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-lg text-gray-600 dark:text-gray-400">
-            Scroll to continue
-          </p>
-        </div>
       </div>
     </section>
   );

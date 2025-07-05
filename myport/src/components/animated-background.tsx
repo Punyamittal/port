@@ -128,6 +128,18 @@ const AnimatedBackground = () => {
     stop: () => void;
   }>();
 
+  // Add effect to control pointer events on content sections
+  useEffect(() => {
+    const contentSections = document.querySelectorAll('.relative.z-20, .relative.z-10');
+    contentSections.forEach((section) => {
+      if (activeSection === "skills") {
+        (section as HTMLElement).style.pointerEvents = "none";
+      } else {
+        (section as HTMLElement).style.pointerEvents = "auto";
+      }
+    });
+  }, [activeSection]);
+
   const keyboardStates = (section: Section) => {
     return STATES[section][isMobile ? "mobile" : "desktop"];
   };
@@ -348,6 +360,16 @@ const AnimatedBackground = () => {
       return;
     }
     console.log("Setting up Spline interactions");
+    console.log("Spline app loaded:", splineApp);
+    
+    // Check if we can find the keyboard object
+    const keyboard = splineApp.findObjectByName("keyboard");
+    console.log("Keyboard object found:", keyboard);
+    
+    // Check if we can find some skill keycaps
+    const sampleSkill = Object.values(SKILLS)[0];
+    const sampleKeycap = splineApp.findObjectByName(sampleSkill.name);
+    console.log("Sample keycap found:", sampleKeycap);
     
     splineApp.addEventListener("keyUp", (e) => {
       console.log("Key up event:", e.target.name);
@@ -384,8 +406,9 @@ const AnimatedBackground = () => {
         start: "top 50%",
         end: "bottom bottom",
         scrub: true,
-        // markers: true,
+        markers: true,
         onEnter: () => {
+          console.log("Skills section entered");
           setActiveSection("skills");
           gsap.to(kbd.scale, {
             ...keyboardStates("skills").scale,
@@ -401,6 +424,7 @@ const AnimatedBackground = () => {
           });
         },
         onLeaveBack: () => {
+          console.log("Skills section left back to hero");
           setActiveSection("hero");
           gsap.to(kbd.scale, { ...keyboardStates("hero").scale, duration: 1 });
           gsap.to(kbd.position, {
@@ -575,6 +599,8 @@ const AnimatedBackground = () => {
         <Spline
           ref={splineContainer}
           onLoad={(app: Application) => {
+            console.log("Spline loaded successfully");
+            console.log("Spline app:", app);
             setSplineApp(app);
             bypassLoading();
           }}
