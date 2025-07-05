@@ -26,7 +26,7 @@ function MainPage() {
 
   // Define glitch colors for each theme
   const glitchColors = isLight
-    ? ["#ffffff", "#8b5cf6", "#ec4899", "#000000", "#a855f7"] // white background with purple/pink/black matrix
+    ? ["#ec4899", "#8b5cf6", "#a855f7", "#000000", "#ec4899"] // pink/purple/black matrix for light theme
     : ["#2b4539", "#61dca3", "#61b3dc", "#0f172a", "#1e293b"]; // dark theme palette
 
   return (

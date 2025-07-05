@@ -406,7 +406,7 @@ const AnimatedBackground = () => {
         start: "top 50%",
         end: "bottom bottom",
         scrub: true,
-        markers: true,
+        markers: false,
         onEnter: () => {
           console.log("Skills section entered");
           setActiveSection("skills");
